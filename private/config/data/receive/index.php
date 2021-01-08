@@ -1,5 +1,5 @@
 <?php
-include($_SERVER['DOCUMENT_ROOT'].'/VideoBox-app/private/config/connection/index.php');
+include($_SERVER['DOCUMENT_ROOT'].'/video-box/private/config/connection/index.php');
 
 
 $sql = "SELECT id, username, permission FROM users";
