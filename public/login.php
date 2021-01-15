@@ -1,3 +1,6 @@
+<?php 
+    include($_SERVER['DOCUMENT_ROOT'].'/VideoBox-app/private/config/data/receive/index.php');
+?>
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -5,6 +8,7 @@
     </head>
     <body>
         <?php include '../src/components/header.php' ?>
+
     </body>
 </html>
 
