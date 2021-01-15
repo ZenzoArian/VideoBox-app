@@ -48,7 +48,7 @@ function test_input($data) {
 }
 
 if ($formCheck1 && $formCheck2 && $formCheck3) {
-    include($_SERVER['DOCUMENT_ROOT'].'/VideoBox-app/private/config/connection/index.php');
+    include($_SERVER['DOCUMENT_ROOT'] . '/VideoBox-app/private/config/connection/index.php');
 
 // Escape user inputs for security
     $username = $conn->real_escape_string($_REQUEST['username']);
@@ -62,12 +62,34 @@ if ($formCheck1 && $formCheck2 && $formCheck3) {
 
 
 // Attempt insert query execution
+
+
+$sql = "SELECT username, email FROM users";
+$result = $conn->query($sql);
+
+$sameName = false;
+
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        if ($username == $row["username"] || $email == $row["email"]) {
+            $sameName = true;
+        }
+    }
+}
+
+if ($sameName) {
+    echo "user / email already exists";
+}
+
+if ($sameName == false) {
     $sql = "INSERT INTO users (username, password, email, permission, accredited) VALUES ('$username', '$password', '$email', 'reporter', false)";
     if($conn->query($sql) === true){
         echo "Records inserted successfully.";
     } else{
         echo "ERROR: Could not able to execute $sql. " . $conn->error;
     }
+}
+
 
 // Close connection
     $conn->close();
