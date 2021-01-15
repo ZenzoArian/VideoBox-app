@@ -2,21 +2,41 @@
 <html>
     <head>
         <title>Video Box</title>
+        <style>
+            .error {color: #FF0000;}
+        </style>
     </head>
     <body>
         <?php include '../src/components/header.php' ?>
-    </body>
-</html>
+        <?php include($_SERVER['DOCUMENT_ROOT'].'/VideoBox-app/private/config/data/upload/index.php'); ?>
 
-<!-- 
-    --- PAGES ---
-    home                  - searchbar, top 5 watched videos overview.
-    login                 - link to create account, link to password forgot.
-    create account        - link to login.
-    password forgot       - link to login, link to create account.
-    video upload          - forum to upload video with content.
-    profile               - overview of uploaded content, create content, update content, delete content.
-    logout                - message when logged out, link to home page.
-    admin users overview  - overview of users, create users, update users, delete users.
-    admin videos overview - overview of content, be able to sort content on users or subject, create content, update content, delete content.
- -->
+<p><span class="error">* required field</span></p>
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    <p>
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username">
+        <span class="error">* <?php echo $usernameErr;?></span>
+        <br><br>
+    </p>
+    <p>
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email">
+        <span class="error">* <?php echo $emailErr;?></span>
+        <br><br>
+    </p>
+    <p>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password">
+        <span class="error">* <?php echo $passwordErr;?></span>
+        <br><br>
+    </p>
+    <input type="submit" value="Submit">
+</form>
+
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
+</body>
+</html>
