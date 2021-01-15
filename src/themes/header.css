@@ -1,10 +1,10 @@
 a {
-    color: #FFFFFF;
+    color: #000000;
     text-decoration: none;
     transition: color .2s ease-in-out;
 }
 a:hover {
-    color: #ffffffc9;
+    color: #111111c9;
 }
 
 .header--container-outer {
@@ -20,10 +20,10 @@ a:hover {
 
 .header--nav-item {
     padding: 1rem;
-    border-bottom: 2px solid #000000;
+    border-bottom: 2px solid #ffffff;
     transition: border .2s ease-in-out;
 }
 
 .header--nav-item:hover {
-    border-bottom: 2px solid #FFFFFF;
+    border-bottom: 2px solid #000000;
 }
