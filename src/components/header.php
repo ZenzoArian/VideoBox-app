@@ -1,5 +1,4 @@
-<?php
-?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/VideoBox-app/src/actions/checkLogin.php'); ?>
 <link rel=stylesheet href="../src/themes/style.css" >
 <link rel=stylesheet href="../src/themes/header.css" >
 
