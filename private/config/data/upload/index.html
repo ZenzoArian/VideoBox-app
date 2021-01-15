@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Add Record Form</title>
+    <title>Add User Form</title>
 </head>
 <body>
-<form action="upload.php" method="post">
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
     <p>
         <label for="username">Username:</label>
         <input type="text" name="username" id="username">
