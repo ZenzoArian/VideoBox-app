@@ -1,14 +1,3 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <title>Add User Form</title>-->
-<!--    <style>-->
-<!--        .error {color: #FF0000;}-->
-<!--    </style>-->
-<!--</head>-->
-<!--<body>-->
-
 <?php
 // define variables and set to empty values
 $usernameErr = $emailErr = $passwordErr = "";
