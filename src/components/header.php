@@ -6,7 +6,15 @@
 <div class="header--container-outer">
     <div class="header--container-inner">
         <div class="header--nav-container">
-            <a href="index.php"><div class="header--nav-item">Home</div></a>
+            <a href="index.php">            <div class="header--nav-item">Home</div></a>
+            <a href="creatAccount.php">     <div class="header--nav-item">creatAccount</div></a>
+            <a href="forgotPassword.php">   <div class="header--nav-item">forgotPassword</div></a>
+            <a href="login.php">            <div class="header--nav-item">login</div></a>
+            <a href="logout.php">           <div class="header--nav-item">logout</div></a>
+            <a href="profile.php">          <div class="header--nav-item">profile</div></a>
+            <a href="upload.php">           <div class="header--nav-item">upload</div></a>
+            <a href="usersOverview.php">    <div class="header--nav-item">usersOverview</div></a>
+            <a href="videosOverview.php">   <div class="header--nav-item">videosOverview</div></a>
         </div>
     </div>
 </div>
