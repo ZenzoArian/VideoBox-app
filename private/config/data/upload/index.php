@@ -55,6 +55,8 @@ if ($formCheck1 && $formCheck2 && $formCheck3) {
     $password = $conn->real_escape_string($_REQUEST['password']);
     $email = $conn->real_escape_string($_REQUEST['email']);
 
+    $password = password_hash($password, PASSWORD_DEFAULT);
+
 //The mysqli_real_escape_string() function escapes special characters
 // in a string and create a legal SQL string to provide security against SQL injection.
 
