@@ -1,0 +1,29 @@
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: color .2s ease-in-out;
+}
+a:hover {
+    color: #ffffffc9;
+}
+
+.header--container-outer {
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+}
+
+.header--nav-container {
+    display: flex;
+}
+
+.header--nav-item {
+    padding: 1rem;
+    border-bottom: 2px solid #000000;
+    transition: border .2s ease-in-out;
+}
+
+.header--nav-item:hover {
+    border-bottom: 2px solid #FFFFFF;
+}
