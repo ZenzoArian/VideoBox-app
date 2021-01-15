@@ -7,7 +7,7 @@
     <div class="header--container-inner">
         <div class="header--nav-container">
             <a href="index.php">            <div class="header--nav-item">Home</div></a>
-            <a href="creatAccount.php">     <div class="header--nav-item">creatAccount</div></a>
+            <a href="createAccount.php">     <div class="header--nav-item">creatAccount</div></a>
             <a href="forgotPassword.php">   <div class="header--nav-item">forgotPassword</div></a>
             <a href="login.php">            <div class="header--nav-item">login</div></a>
             <a href="logout.php">           <div class="header--nav-item">logout</div></a>
