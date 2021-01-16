@@ -25,10 +25,7 @@ if(isset($_POST['but_upload'])){
              // Upload
              if(move_uploaded_file($_FILES['file']['tmp_name'],$target_file)){
                // Insert record
-            //    $query = "INSERT INTO videos(name,location) VALUES('".$name."','".$target_file."')";
-
-            //    mysqli_query($con,$query);
-            //    $_SESSION['message'] = "Upload successfully.";
+               
                 $file = $_FILES["file"]["name"];
                 $username = $_SESSION['username'];
                 $sql = "INSERT INTO uploads (username, title, description, subject, views, file) VALUES ('$username', '$title', '$description', '$subject', '0', '$file')";
