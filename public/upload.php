@@ -1,44 +1,3 @@
-<?php
-
-$name= $_FILES['file']['name'];
-
-$tmp_name= $_FILES['file']['tmp_name'];
-
-$position= strpos($name, ".");
-
-$fileextension= substr($name, $position + 1);
-
-$fileextension= strtolower($fileextension);
-
-
-if (isset($name)) {
-
-    $path= 'Uploads/videos/';
-    if (empty($name))
-    {
-        echo "Please choose a file";
-    }
-    else if (!empty($name)){
-        if (($fileextension !== "mp4") && ($fileextension !== "ogg") && ($fileextension !== "webm"))
-        {
-            echo "The file extension must be .mp4, .ogg, or .webm in order to be uploaded";
-        }
-
-
-        else if (($fileextension == "mp4") || ($fileextension == "ogg") || ($fileextension == "webm"))
-        {
-            if (move_uploaded_file($tmp_name, $path.$name)) {
-                echo 'Uploaded!';
-            }
-            else {
-                echo "wy";
-            }
-        }
-    }
-}
-?>
-
-
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -46,20 +5,63 @@ if (isset($name)) {
     </head>
     <body>
         <?php include '../src/components/header.php' ?>
+        <!-- Upload response -->
+    <?php 
+    if(isset($_SESSION['message'])){
+       echo $_SESSION['message'];
+       unset($_SESSION['message']);
+    }
+    ?>
+    <form method="post" action="" enctype='multipart/form-data'>
+      <input type='file' name='file' />
+      <input type='submit' value='Upload' name='but_upload'>
+    </form>
     </body>
 </html>
 
-<!--<form method="post" enctype="multipart/form-data" action="--><?php //echo htmlspecialchars($_SERVER["PHP_SELF"]);?><!--">-->
-<!--    <label for="file"><span>Filename:</span></label>-->
-<!--    <input type="file" name="file" id="file" />-->
-<!--    <br />-->
-<!--    <input type="submit" name="submit" value="Submit" />-->
-<!--</form>-->
-<form action="" method='post' enctype="multipart/form-data">
-    <input type="file" name="file"/><br><br>
-    <input type="submit" value="Upload"/>
-</form>
-</form>
+<?php
+include($_SERVER['DOCUMENT_ROOT'].'/VideoBox-app/private/config/connection/index.php');
+ 
+if(isset($_POST['but_upload'])){
+   $maxsize = 5242880; // 5MB
+   if(isset($_FILES['file']['name']) && $_FILES['file']['name'] != ''){
+       $name = $_FILES['file']['name'];
+       $target_dir = "../src/uploads/";
+       $target_file = $target_dir . $_FILES["file"]["name"];
+
+       // Select file type
+       $extension = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+       // Valid file extensions
+       $extensions_arr = array("mp4","avi","3gp","mov","mpeg");
+
+       // Check extension
+       if( in_array($extension,$extensions_arr) ){
+ 
+          // Check file size
+          if(($_FILES['file']['size'] >= $maxsize) || ($_FILES["file"]["size"] == 0)) {
+             $_SESSION['message'] = "File too large. File must be less than 5MB.";
+          }else{
+             // Upload
+             if(move_uploaded_file($_FILES['file']['tmp_name'],$target_file)){
+               // Insert record
+               $query = "INSERT INTO videos(name,location) VALUES('".$name."','".$target_file."')";
+
+               mysqli_query($con,$query);
+               $_SESSION['message'] = "Upload successfully.";
+             }
+          }
+
+       }else{
+          $_SESSION['message'] = "Invalid file extension.";
+       }
+   }else{
+       $_SESSION['message'] = "Please select a file.";
+   }
+//    header('location: index.php');
+   exit;
+} 
+?>
 
 <script>
     if ( window.history.replaceState ) {
