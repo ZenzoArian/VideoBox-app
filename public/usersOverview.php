@@ -1,22 +1,83 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Video Box</title>
-    </head>
-    <body>
-        <?php include '../src/components/header.php' ?>
-    </body>
+<head>
+    <title>Display all records from Database</title>
+</head>
+<body>
+<?php include '../src/components/header.php' ?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/VideoBox-app/private/config/data/upload/user.php'); ?>
+
+<h2>Make a user</h2>
+
+<p><span class="error">* required field</span></p>
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    <p>
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username">
+        <span class="error">* <?php echo $usernameErr;?></span>
+        <br><br>
+    </p>
+    <p>
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email">
+        <span class="error">* <?php echo $emailErr;?></span>
+        <br><br>
+    </p>
+    <p>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password">
+        <span class="error">* <?php echo $passwordErr;?></span>
+        <br><br>
+    </p>
+    <input type="submit" value="Submit">
+</form>
+
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
+
+<br>
+<br>
+
+<h2>User overview and edit/delete a user</h2>
+
+<table>
+    <tr>
+        <th>Id:</th>
+        <th>Username:</th>
+        <th>Email:</th>
+        <th>Permission:</th>
+        <th>Accredited:</th>
+        <th>Edit:</th>
+        <th>Delete:</th>
+    </tr>
+
+    <?php
+
+    include($_SERVER['DOCUMENT_ROOT'].'/VideoBox-app/private/config/connection/index.php');
+
+    $records = mysqli_query($conn,"SELECT id, username, password, email, permission, accredited FROM users ORDER BY id DESC;"); // fetch data from database
+
+    while($data = mysqli_fetch_array($records))
+    {
+        ?>
+        <tr>
+            <td><?php echo $data['id']; ?></td>
+            <td><?php echo $data['username']; ?></td>
+            <td><?php echo $data['email']; ?></td>
+            <td><?php echo $data['permission']; ?></td>
+            <td><?php echo $data['accredited']; ?></td>
+            <td><a href="../private/config/data/edit/editUser.php?id=<?php echo $data['id']; ?>">Edit</a></td>
+            <td><a href="../private/config/data/edit/deleteUser.php?id=<?php echo $data['id']; ?>">Delete</a></td>
+        </tr>
+        <?php
+    }
+    ?>
+</table>
+
+</body>
 </html>
 
-<!-- 
-    --- PAGES ---
-    home                  - searchbar, top 5 watched videos overview.
-    login                 - link to create account, link to password forgot.
-    create account        - link to login.
-    password forgot       - link to login, link to create account.
-    video upload          - forum to upload video with content.
-    profile               - overview of uploaded content, create content, update content, delete content.
-    logout                - message when logged out, link to home page.
-    admin users overview  - overview of users, create users, update users, delete users.
-    admin videos overview - overview of content, be able to sort content on users or subject, create content, update content, delete content.
- -->
+
