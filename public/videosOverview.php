@@ -112,8 +112,6 @@ if(isset($_SESSION['message'])){
         <th>Description:</th>
         <th>Subject:</th>
         <th>Views:</th>
-        <th>Edit:</th>
-        <th>Delete:</th>
     </tr>
 
 <?php
@@ -174,8 +172,6 @@ if (empty($_POST["search_name"])) {
         <th>Description:</th>
         <th>Subject:</th>
         <th>Views:</th>
-        <th>Edit:</th>
-        <th>Delete:</th>
     </tr>
 
     <?php
