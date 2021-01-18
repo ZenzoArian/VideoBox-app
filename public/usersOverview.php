@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Display all records from Database</title>
-</head>
-<body>
-<?php include '../src/components/header.php' ?>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/VideoBox-app/private/config/data/upload/user.php'); ?>
+    <head>
+        <title>Display all records from Database</title>
+    </head>
+    <body>
+        <?php include '../src/components/header.php' ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'].'/VideoBox-app/src/actions/checkLoginAdmin.php'); ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'].'/VideoBox-app/private/config/data/upload/user.php'); ?>
 
 <h2>Make a user</h2>
 

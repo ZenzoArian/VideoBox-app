@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -5,6 +6,7 @@
     </head>
     <body>
         <?php include '../src/components/header.php' ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'].'/VideoBox-app/src/actions/checkLoginUSer.php'); ?>
     </body>
 </html>
 
