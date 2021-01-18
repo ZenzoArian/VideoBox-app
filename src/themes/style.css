@@ -1,7 +1,11 @@
 html, body {
-    margin: 2.5rem 0 0 0;
+    margin: 4.5rem 0 0 0;
     padding: 0;
     background-color: #ffffff;
     color: #000000;
     font-family: 'Saira Semi Condensed', sans-serif;
+}
+
+body {
+    padding: 0 9rem;
 }

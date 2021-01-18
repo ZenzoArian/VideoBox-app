@@ -4,7 +4,7 @@ a {
     transition: color .2s ease-in-out;
 }
 a:hover {
-    color: #111111c9;
+    color: #219EC0;
 }
 
 .header--container-outer {
@@ -12,10 +12,20 @@ a:hover {
     overflow: hidden;
     position: fixed;
     top: 0;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 20px 20px #ffffff;
+    margin: 0 -9rem;
+}
+
+.header--container-inner {
+    display: flex;
+    justify-content: space-between;
 }
 
 .header--nav-container {
     display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .header--nav-item {
@@ -26,4 +36,9 @@ a:hover {
 
 .header--nav-item:hover {
     border-bottom: 2px solid #000000;
+}
+
+.header--logo {
+    max-width: 100px;
+    margin: 0.7rem 1rem;
 }

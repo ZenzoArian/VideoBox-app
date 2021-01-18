@@ -4,6 +4,9 @@
 
 <div class="header--container-outer">
     <div class="header--container-inner">
+        <div class="header--logo-container">
+            <img src="../src/themes/images/logo.png" alt="Videobox logo" class="header--logo">
+        </div>
         <div class="header--nav-container">
             <a href="index.php">            <div class="header--nav-item">Home</div></a>
             <a href="createAccount.php">    <div class="header--nav-item">createAccount</div></a>
