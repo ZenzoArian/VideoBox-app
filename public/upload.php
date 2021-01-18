@@ -18,19 +18,18 @@
     <form method="post" action="" enctype='multipart/form-data'>
         <p>
             <label for="title">title:</label>
-            <input type="text" name="title" id="title">
+            <input type="text" name="title" id="title" maxlength="15">
             <span class="error">* <?php echo $titleErr;?></span>
             <br><br>
         </p>
         <p>
             <label for="description">description:</label>
-            <textarea type="text" name="description" id="description"></textarea>
-            <span class="error">* <?php echo $descriptionErr;?></span>
+            <textarea type="text" name="description" id="description" maxlength="50"></textarea>
             <br><br>
         </p>
         <p>
             <label for="subject">subject:</label>
-            <input type="text" name="subject" id="subject">
+            <input type="text" name="subject" id="subject" maxlength="10">
             <span class="error">* <?php echo $subjectErr;?></span>
             <br><br>
         </p>

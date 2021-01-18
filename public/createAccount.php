@@ -14,19 +14,19 @@
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
     <p>
         <label for="username">Username:</label>
-        <input type="text" name="username" id="username">
+        <input type="text" name="username" id="username" maxlength="15">
         <span class="error">* <?php echo $usernameErr;?></span>
         <br><br>
     </p>
     <p>
         <label for="email">Email:</label>
-        <input type="text" name="email" id="email">
+        <input type="text" name="email" id="email" maxlength="50">
         <span class="error">* <?php echo $emailErr;?></span>
         <br><br>
     </p>
     <p>
         <label for="password">Password:</label>
-        <input type="password" name="password" id="password">
+        <input type="password" name="password" id="password" maxlength="20">
         <span class="error">* <?php echo $passwordErr;?></span>
         <br><br>
     </p>
