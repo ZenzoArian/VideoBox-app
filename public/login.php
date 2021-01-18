@@ -8,7 +8,8 @@
     </head>
     <body>
         <?php include '../src/components/header.php' ?>
-
+        
+        <a href="forgotPassword.php">   <div class="">forgotPassword</div></a>
         <p><span class="error">* required field</span></p>
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
             <p>
