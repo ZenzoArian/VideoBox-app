@@ -3,7 +3,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/VideoBox-app/private/config/connection/index
 include('videoForm.php');
  
 if(isset($_POST['but_upload'])){
-   $maxsize = 5368709120; // 5MB
+   $maxsize = 5368709120; // 5GB
    if(isset($_FILES['file']['name']) && $_FILES['file']['name'] != ''){
        $name = $_FILES['file']['name'];
        $target_dir = "../src/uploads/";
@@ -20,7 +20,7 @@ if(isset($_POST['but_upload'])){
  
           // Check file size
           if(($_FILES['file']['size'] >= $maxsize) || ($_FILES["file"]["size"] == 0)) {
-             $_SESSION['message'] = "File too large. File must be less than 5MB.";
+             $_SESSION['message'] = "File too large. File must be less than 5GB.";
           } else{
              // Upload
              if(move_uploaded_file($_FILES['file']['tmp_name'],$target_file)){
