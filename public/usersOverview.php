@@ -70,8 +70,9 @@
             <td><?php echo $data['email']; ?></td>
             <td><?php echo $data['permission']; ?></td>
             <td><?php echo $data['accredited']; ?></td>
-            <td><a href="../private/config/data/edit/editUser.php?id=<?php echo $data['id']; ?>">Edit</a></td>
-            <td><a href="../private/config/data/edit/deleteUser.php?id=<?php echo $data['id']; ?>">Delete</a></td>
+            <td><a href="../private/config/data/edit/editUser.php?location=user&id=<?php echo password_hash($data['id'], PASSWORD_DEFAULT); ?>">Edit</a></td>
+            <td><a href="../private/config/data/edit/deleteUser.php?location=user&id=<?php echo password_hash($data['id'], PASSWORD_DEFAULT);?>">Delete</a></td>
+
         </tr>
         <?php
     }

@@ -43,8 +43,8 @@
                     <td><?php echo $data['description']; ?></td>
                     <td><?php echo $data['subject']; ?></td>
                     <td><?php echo $data['views']; ?></td>
-                    <td><a href="../private/config/data/edit/editVideo.php?id=<?php echo $data['id']; ?>">Edit</a></td>
-                    <td><a href="../private/config/data/edit/deleteVideo.php?id=<?php echo $data['id']; ?>">Delete</a></td>
+                    <td><a href="../private/config/data/edit/editVideo.php?location=profile&id=<?php echo password_hash($data['id'], PASSWORD_DEFAULT); ?>">Edit</a></td>
+                    <td><a href="../private/config/data/edit/deleteVideo.php?location=profile&id=<?php echo password_hash($data['id'], PASSWORD_DEFAULT); ?>">Delete</a></td>
                 </tr>
                 <?php
             }
