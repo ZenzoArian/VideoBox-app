@@ -97,10 +97,21 @@ if(isset($_SESSION['message'])){
 
 
 
-<h2>Search uploads per username</h2>
+
+
+
+
+
+
+
+
+
+<h2>Search uploads</h2>
 
 <form action="" method="post">
     <input type="text" name="search_name" placeholder="username">
+    <span>or</span>
+    <input type="text" name="search_subject" placeholder="subject">
     <input type="submit" name="submit" value="Search">
 </form>
 
@@ -117,22 +128,31 @@ if(isset($_SESSION['message'])){
 
 <?php
 
-if (empty($_POST["search_name"])) {
-    echo "Username is required";
+if (empty($_POST["search_name"]) && empty($_POST["search_subject"])) {
+    echo "Username or subject is required";
     echo "<br>";
     echo "<br>";
 
 } else {
-    $search_value_name=$_POST["search_name"];
+
+
+    if (!empty($_POST["search_name"])) {
+        $search_type = 'username';
+        $search_value=$_POST["search_name"];
+    } else if (!empty($_POST["search_subject"])) {
+        $search_type = 'subject';
+        $search_value=$_POST["search_subject"];
+    }
+
     echo "<br>";
     echo "<br>";
 
 
     include($_SERVER['DOCUMENT_ROOT'].'/VideoBox-app/private/config/connection/index.php');
 
-    $search_records_name = mysqli_query($conn,"SELECT * FROM uploads WHERE username LIKE '%{$search_value_name}%'");// fetch data from database
+    $search_records = mysqli_query($conn,"SELECT * FROM uploads WHERE $search_type LIKE '%{$search_value}%'");// fetch data from database
 
-    while($data = mysqli_fetch_array($search_records_name)) {
+    while($data = mysqli_fetch_array($search_records)) {
 
         ?>
         <tr>
@@ -153,68 +173,6 @@ if (empty($_POST["search_name"])) {
 }
 ?>
 </table>
-
-<br>
-<br>
-
-<h2>Search uploads per subject</h2>
-
-<form action="" method="post">
-    <input type="text" name="search_subject" placeholder="subject">
-    <input type="submit" name="submit" value="Search">
-</form>
-
-<table>
-    <tr>
-        <th>Video:</th>
-        <th>Id:</th>
-        <th>Username:</th>
-        <th>Title:</th>
-        <th>Description:</th>
-        <th>Subject:</th>
-        <th>Views:</th>
-    </tr>
-
-    <?php
-
-    if (empty($_POST["search_subject"])) {
-        echo "Subject is required";
-        echo "<br>";
-        echo "<br>";
-
-    } else {
-        $search_value_subject=$_POST["search_subject"];
-        echo "<br>";
-        echo "<br>";
-
-
-        include($_SERVER['DOCUMENT_ROOT'].'/VideoBox-app/private/config/connection/index.php');
-
-        $search_records_subject = mysqli_query($conn,"SELECT * FROM uploads WHERE subject LIKE '%{$search_value_subject}%'");// fetch data from database
-
-        while($data = mysqli_fetch_array($search_records_subject)) {
-
-            ?>
-            <tr>
-                <td>
-                    <video width="200" height="100" controls>
-                        <source src="../src/uploads/<?php echo $data['file']; ?>" type="video/mp4">
-                    </video>
-                </td>
-                <td><?php echo $data['id']; ?></td>
-                <td><?php echo $data['username']; ?></td>
-                <td><?php echo $data['title']; ?></td>
-                <td><?php echo $data['description']; ?></td>
-                <td><?php echo $data['subject']; ?></td>
-                <td><?php echo $data['views']; ?></td>
-            </tr>
-            <?php
-        }
-    }
-    ?>
-</table>
-
-
 
 </body>
 </html>

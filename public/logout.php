@@ -6,7 +6,7 @@
     </head>
     <body>
         <?php include '../src/components/header.php' ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'].'/VideoBox-app/src/actions/checkLoginUSer.php'); ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'].'/VideoBox-app/src/actions/checkLoginUser.php'); ?>
         <?PHP
 
             session_start();

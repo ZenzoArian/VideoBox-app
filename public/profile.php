@@ -6,7 +6,7 @@
     </head>
     <body>
         <?php include '../src/components/header.php' ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'].'/VideoBox-app/src/actions/checkLoginUSer.php'); ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'].'/VideoBox-app/src/actions/checkLoginUser.php'); ?>
         <h2>Video overview and edit/delete</h2>
 
         <table>
