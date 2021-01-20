@@ -19,25 +19,25 @@ if(isset($_SESSION['message'])){
 
 <form method="post" action="" enctype='multipart/form-data'>
     <p>
-        <label for="title">title:</label>
-        <input type="text" name="title" id="title">
+        <label for="title">title:</label><br>
+        <input type="text" name="title" id="title" class="input--field input-small">
         <span class="error">* <?php echo $titleErr;?></span>
         <br><br>
     </p>
     <p>
-        <label for="description">description:</label>
-        <textarea type="text" name="description" id="description"></textarea>
+        <label for="description">description:</label><br>
+        <textarea type="text" name="description" id="description" class="input--field input-small"></textarea>
         <span class="error">* <?php echo $descriptionErr;?></span>
         <br><br>
     </p>
     <p>
-        <label for="subject">subject:</label>
-        <input type="text" name="subject" id="subject">
+        <label for="subject">subject:</label><br>
+        <input type="text" name="subject" id="subject" class="input--field input-small">
         <span class="error">* <?php echo $subjectErr;?></span>
         <br><br>
     </p>
-    <input type='file' name='file' />
-    <input type='submit' value='Upload' name='but_upload'>
+    <input type='file' name='file'/>
+    <input type='submit' value='Upload' name='but_upload' class="form--submit-button">
 </form>
 </body>
 </html>
@@ -108,11 +108,12 @@ if(isset($_SESSION['message'])){
 
 <h2>Search uploads</h2>
 
-<form action="" method="post">
-    <input type="text" name="search_name" placeholder="username">
-    <span>or</span>
-    <input type="text" name="search_subject" placeholder="subject">
-    <input type="submit" name="submit" value="Search">
+<form action="" method="post" class="form--search">
+    <input type="text" name="search_name" placeholder="username" class="input--field">
+    <button type="submit" name="submit" value="Search"><img src="../src/themes/images/search.png" alt="search icon button"></button>
+    <span class="searchOrText">or</span>
+    <input type="text" name="search_subject" placeholder="subject" class="input--field">
+    <button type="submit" name="submit" value="Search"><img src="../src/themes/images/search.png" alt="search icon button"></button>
 </form>
 
 <table>

@@ -1,0 +1,89 @@
+.input--field {
+    width: 40rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    border: none;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.16);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.16);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.16);
+    padding-left: 20px;
+}
+
+.input-small {
+    width: 20rem;
+    height: 2rem;
+    font-size: 1rem;
+}
+
+.input--field:focus {
+    outline: none;
+}
+
+.form--search {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+form img {
+    width: 1.3rem;
+}
+
+form button {
+    width: 3.14rem;
+    height: 3.14rem;
+    background-color: #219EC0;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color .5s ease-in-out;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.16);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.16);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.16);
+}
+
+form button:hover {
+    background-color: #34b3d6;
+    transition: background-color .2s ease-in-out;
+}
+
+form button:focus {
+    outline: none;
+}
+
+.searchOrText {
+    font-size: 2rem;
+    margin: 0 10px 0 10px;
+}
+
+form label {
+    font-size: 1.5rem;
+    letter-spacing: .2rem;
+    text-transform: capitalize;
+}
+
+.form--submit-button {
+    background-color: #219EC0;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color .5s ease-in-out;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.16);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.16);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.16);
+    font-size: 1.2rem;
+    padding: .8rem;
+    margin: 1rem 0;
+    color: #FFFFFF;
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+}
+
+.form--submit-button:hover {
+    background-color: #34b3d6;
+    transition: background-color .2s ease-in-out;
+}
