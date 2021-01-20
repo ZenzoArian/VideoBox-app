@@ -37,7 +37,7 @@ if ($result->num_rows > 0) {
                     exit;
                 } else
                 {
-                    echo mysqli_error();
+                    logError("SQL Update", mysqli_error());
                 }
             }
             ?>

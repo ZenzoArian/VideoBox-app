@@ -87,6 +87,7 @@ if ($sameName == false) {
         echo "Records inserted successfully.";
     } else{
         echo "ERROR: Could not able to execute $sql. " . $conn->error;
+        logError("SQL insert into", $conn->error);
     }
 }
 

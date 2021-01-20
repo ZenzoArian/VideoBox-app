@@ -25,6 +25,7 @@ if ($result->num_rows > 0) {
                 exit;
             } else {
                 echo "Error deleting record"; // display error message if not delete
+                logError("SQL delete record", "Unable to delete record from database.");
             }
 
         }
