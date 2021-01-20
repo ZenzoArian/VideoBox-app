@@ -7,6 +7,23 @@
     <body>
         <?php include '../src/components/header.php' ?>
         <?php include($_SERVER['DOCUMENT_ROOT'].'/VideoBox-app/src/actions/checkLoginUser.php'); ?>
+        <?php
+        $sql = "SELECT username, accredited FROM users";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                if ($_SESSION['username'] == $row["username"] && $row["accredited"] != "1") {
+                    // Close connection
+                    $conn->close();
+
+                    echo "You need to be accredited by the admin before you can upload anything";
+                }
+
+            }
+        }
+        ?>
+
         <h2>Video overview and edit/delete</h2>
 
         <table>
