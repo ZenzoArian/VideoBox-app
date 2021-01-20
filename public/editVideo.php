@@ -28,12 +28,12 @@ if ($result->num_rows > 0) {
                 if($edit && $location == 'video')
                 {
                     mysqli_close($conn); // Close connection
-                    header("location:" . '/VideoBox-app/public/videosOverview.php'); // redirects to all records page
+                    header("location:" . 'videosOverview.php'); // redirects to all records page
                     exit;
                 } else if($edit && $location == 'profile')
                 {
                     mysqli_close($conn); // Close connection
-                    header("location:" . '/VideoBox-app/public/profile.php'); // redirects to all records page
+                    header("location:" . 'profile.php'); // redirects to all records page
                     exit;
                 } else
                 {
@@ -41,15 +41,24 @@ if ($result->num_rows > 0) {
                 }
             }
             ?>
+            <!DOCTYPE HTML>
+            <html>
+            <head>
+                <title>Video Box</title>
+            </head>
+              <body>
+              <?php include '../src/components/header.php'?>
 
-            <h3>Update Data</h3>
+                <h3>Update Data</h3>
 
-            <form method="POST">
-                <input type="text" name="title" value="<?php echo $data['title'] ?>" placeholder="Enter Title" Required>
-                <input type="text" name="description" value="<?php echo $data['description'] ?>" placeholder="Enter Description" Required>
-                <input type="text" name="subject" value="<?php echo $data['subject'] ?>" placeholder="Enter Subject" Required>
-                <input type="submit" name="update" value="Update">
-            </form>
+                <form method="POST">
+                    <input type="text" class="input--field input-small" name="title" value="<?php echo $data['title'] ?>" placeholder="Enter Title" Required><br><br>
+                    <input type="text" class="input--field input-small" name="description" value="<?php echo $data['description'] ?>" placeholder="Enter Description" Required><br><br>
+                    <input type="text" class="input--field input-small" name="subject" value="<?php echo $data['subject'] ?>" placeholder="Enter Subject" Required><br><br>
+                    <input type="submit" class="form--submit-button" name="update" value="Update">
+                </form>
+              </body>
+            </html>
 
             <?php
         }

@@ -1,5 +1,6 @@
 <?php
 
+
 session_start();
 $errors = [];
 $user_id = "";
@@ -47,7 +48,7 @@ if (isset($_POST['reset-password'])) {
     }else if(mysqli_num_rows($results) <= 0) {
         array_push($errors, "Sorry, no user exists on our system with that email");
     }
-    // generate a unique random token of length 100
+    // generate a unique random token of length 50
     $token = bin2hex(openssl_random_pseudo_bytes(50));
 
     if (count($errors) == 0) {

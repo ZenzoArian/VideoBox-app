@@ -32,7 +32,7 @@ if ($result->num_rows > 0) {
                 if($edit)
                 {
                     mysqli_close($conn); // Close connection
-                    header("location:" . '/VideoBox-app/public/usersOverview.php'); // redirects to all records page
+                    header("location:" . 'usersOverview.php'); // redirects to all records page
                     exit;
                 }
                 else
@@ -40,18 +40,27 @@ if ($result->num_rows > 0) {
                     echo mysqli_error();
                 }
             }
-            ?>
+                    ?>
+                        <!DOCTYPE HTML>
+                        <html>
+                        <head>
+                            <title>Video Box</title>
+                        </head>
+                            <body>
+                            <?php include '../src/components/header.php'?>
 
-                        <h3>Update Data</h3>
+                            <h3>Update Data</h3>
 
-                        <form method="POST">
-                            <input type="text" name="username" value="<?php echo $data['username'] ?>" placeholder="Enter Username" Required>
-                            <input type="text" name="password" value="" placeholder="Enter Password">
-                            <input type="text" name="email" value="<?php echo $data['email'] ?>" placeholder="Enter Email" Required>
-                            <input type="text" name="permission" value="<?php echo $data['permission'] ?>" placeholder="Enter Permission" Required>
-                            <input type="text" name="accredited" value="<?php echo $data['accredited'] ?>" placeholder="Enter Accredited" Required>
-                            <input type="submit" name="update" value="Update">
-                        </form>
+                                <form method="POST">
+                                    <input type="text" class="input--field input-small" name="username" value="<?php echo $data['username'] ?>" placeholder="Enter Username" Required> <br><br>
+                                    <input type="text" class="input--field input-small" name="password" value="" placeholder="Enter Password"><br><br>
+                                    <input type="text" class="input--field input-small" name="email" value="<?php echo $data['email'] ?>" placeholder="Enter Email" Required><br><br>
+                                    <input type="text" class="input--field input-small" name="permission" value="<?php echo $data['permission'] ?>" placeholder="Enter Permission" Required><br><br>
+                                    <input type="text" class="input--field input-small" name="accredited" value="<?php echo $data['accredited'] ?>" placeholder="Enter Accredited" Required><br><br>
+                                    <input type="submit" class="form--submit-button" name="update" value="Update">
+                                </form>
+                            </body>
+                        </html>
 <?php
         }
     }

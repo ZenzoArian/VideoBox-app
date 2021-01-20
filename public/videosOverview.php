@@ -87,7 +87,7 @@ if(isset($_SESSION['message'])){
             <td><?php echo $data['description']; ?></td>
             <td><?php echo $data['subject']; ?></td>
             <td><?php echo $data['views']; ?></td>
-            <td><a href="../private/config/data/edit/editVideo.php?location=video&id=<?php echo password_hash($data['id'], PASSWORD_DEFAULT); ?>">Edit</a></td>
+            <td><a href="editVideo.php?location=video&id=<?php echo password_hash($data['id'], PASSWORD_DEFAULT); ?>">Edit</a></td>
             <td><a href="../private/config/data/edit/deleteVideo.php?location=video&id=<?php echo password_hash($data['id'], PASSWORD_DEFAULT); ?>">Delete</a></td>
         </tr>
         <?php
