@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/VideoBox-app/private/logHandel/error.php'); ?>
 
 <link rel=stylesheet href="../src/themes/style.css" >
 <link rel=stylesheet href="../src/themes/header.css" >

@@ -1,6 +1,0 @@
-SQL connectionerror - message from error: can't connect to databse. - on ArraySQL connection error - message from error: can't connect to databse. - on index.phpSQL connection error - message from error: can't connect to databse. - on index.php
-SQL connection error - message from error: can't connect to databse. - on index.phpend of error log
-SQL connection error - message from error: can't connect to databse. - on index.php 
-SQL connection error - message from error: can't connect to databse. - on Array 
-SQL connection error - message from error: can't connect to databse. - on index.php 
-SQL connection error: can't connect to databse. - on index.php 

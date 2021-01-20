@@ -1,5 +1,3 @@
-<?php include($_SERVER['DOCUMENT_ROOT'].'/VideoBox-app/private/logHandel/error.php'); ?>
-
 <?php
 $servername = "localhost";
 $username = "root";
@@ -10,6 +8,8 @@ $dbname = "videobox-exam";
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
-  die(logError("SQL connection", $conn->connect_error));
+  
+  die("Connection failed: " . $conn->connect_error);
+  logError("Connection", $conn->connect_error);
 }
 ?>
