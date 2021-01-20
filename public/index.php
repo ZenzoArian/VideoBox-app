@@ -7,7 +7,6 @@
         <?php include '../src/components/header.php' ?>
     </body>
 </html>
-
 <!-- 
     --- PAGES ---
     home                  - searchbar, top 5 watched videos overview.
