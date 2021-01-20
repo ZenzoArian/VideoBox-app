@@ -16,6 +16,7 @@ if ($result->num_rows > 0) {
 
             if ($del) {
                 mysqli_close($conn); // Close connection
+                logUser("deleted user from database");
                 header("location:" . '/VideoBox-app/public/usersOverview.php'); // redirects to all records page
                 exit;
             } else {

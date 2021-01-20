@@ -31,12 +31,12 @@ if(isset($_POST['but_upload'])){
                 $sql = "INSERT INTO uploads (username, title, description, subject, views, file) VALUES ('$username', '$title', '$description', '$subject', '0', '$file')";
                 if($conn->query($sql) === true){
                     echo "Records inserted successfully.";
+                    logUser("uploaded video/data to database");
                 } else{
                     echo "ERROR: Could not able to execute $sql. " . $conn->error;
                     logError("SQL insert into", $conn->error);
                 }
 
-                 logUser("uploaded video/data to database");
                  // Close connection
                 $conn->close();
              }

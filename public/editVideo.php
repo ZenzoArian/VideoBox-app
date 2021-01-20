@@ -27,11 +27,13 @@ if ($result->num_rows > 0) {
 
                 if($edit && $location == 'video')
                 {
+                    logUser("edited video from videoOverview");
                     mysqli_close($conn); // Close connection
                     header("location:" . 'videosOverview.php'); // redirects to all records page
                     exit;
                 } else if($edit && $location == 'profile')
                 {
+                    logUser("edited video from profile");
                     mysqli_close($conn); // Close connection
                     header("location:" . 'profile.php'); // redirects to all records page
                     exit;

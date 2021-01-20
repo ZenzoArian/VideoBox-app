@@ -31,6 +31,7 @@ if ($result->num_rows > 0) {
 
                 if($edit)
                 {
+                    logUser("edited user");
                     mysqli_close($conn); // Close connection
                     header("location:" . 'usersOverview.php'); // redirects to all records page
                     exit;

@@ -35,6 +35,7 @@
         echo "<br>";
     } else {
         $search_value_title=$_POST["search_title"];
+        logUser("searched for title");
         echo "<br>";
         echo "<br>";
 
