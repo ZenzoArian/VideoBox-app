@@ -34,9 +34,9 @@ if(isset($_POST['but_upload'])){
                 } else{
                     echo "ERROR: Could not able to execute $sql. " . $conn->error;
                 }
-            
-            
-            // Close connection
+
+                 logUser("uploaded video/data to database");
+                 // Close connection
                 $conn->close();
              }
           }

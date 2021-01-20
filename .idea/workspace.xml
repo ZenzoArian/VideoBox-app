@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9031b0a8-9d52-4172-87ad-45616e32c26f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/editUser.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/editVideo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/private/config/data/edit/editUser.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private/config/data/edit/editVideo.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/password-recovery/app_logic.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/password-recovery/app_logic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/usersOverview.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/usersOverview.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/videosOverview.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/videosOverview.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/themes/video.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/themes/video.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/private/config/data/upload/videoFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/private/config/data/upload/videoFile.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +62,7 @@
       <updated>1610096661260</updated>
       <workItem from="1610096663761" duration="2885000" />
       <workItem from="1610699357727" duration="4810000" />
-      <workItem from="1610719968538" duration="57106000" />
+      <workItem from="1610719968538" duration="58064000" />
     </task>
     <servers />
   </component>
