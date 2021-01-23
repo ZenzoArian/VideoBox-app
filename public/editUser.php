@@ -5,6 +5,8 @@
 </head>
     <body>
     <?php include '../src/components/header.php'?>
+    <?php include($_SERVER['DOCUMENT_ROOT'].'/VideoBox-app/private/actions/checkLoginAdmin.php'); ?>
+
 <?php
 
 include($_SERVER['DOCUMENT_ROOT'].'/VideoBox-app/private/config/connection/index.php');

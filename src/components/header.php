@@ -16,7 +16,7 @@
         </div>
         <div class="header--nav-container">
             <a href="index.php">            <div class="header--nav-item">Home</div></a>
-            <?php include($_SERVER['DOCUMENT_ROOT'].'/VideoBox-app/src/actions/checkHeader.php'); ?>
+            <?php include($_SERVER['DOCUMENT_ROOT'].'/VideoBox-app/private/actions/checkHeader.php'); ?>
         </div>
     </div>
 </div>
