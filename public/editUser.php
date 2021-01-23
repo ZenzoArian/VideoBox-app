@@ -1,3 +1,10 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Video Box</title>
+</head>
+    <body>
+    <?php include '../src/components/header.php'?>
 <?php
 
 include($_SERVER['DOCUMENT_ROOT'].'/VideoBox-app/private/config/connection/index.php');
@@ -42,13 +49,6 @@ if ($result->num_rows > 0) {
                 }
             }
                     ?>
-                        <!DOCTYPE HTML>
-                        <html>
-                        <head>
-                            <title>Video Box</title>
-                        </head>
-                            <body>
-                            <?php include '../src/components/header.php'?>
 
                             <h3>Update Data</h3>
 

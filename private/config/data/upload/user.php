@@ -85,6 +85,7 @@ if ($sameName == false) {
     $sql = "INSERT INTO users (username, password, email, permission, accredited) VALUES ('$username', '$password', '$email', 'reporter', false)";
     if($conn->query($sql) === true){
         echo "Records inserted successfully.";
+        logUser("Created new user.");
     } else{
         echo "ERROR: Could not able to execute $sql. " . $conn->error;
         logError("SQL insert into", $conn->error);
